@@ -7,8 +7,15 @@
 html, body {
   height: 100vh;
   width: 100%;
-  background: rgb(29, 29, 29);
+  background: #61DBFB;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#root {
+  margin: auto;
+  width: 80%;
+  max-width: 960px;
+  height: 70%;
 }
