@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const TaskInfo = () => {
+const TaskInfo = ({tasksLength}) => {
     const fechActual = new Date();
     const diasSemanas = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const meses = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
