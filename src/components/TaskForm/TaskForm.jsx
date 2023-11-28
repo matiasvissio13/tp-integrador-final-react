@@ -1,37 +1,17 @@
-import React, { useState } from 'react'
-
-
 const TaskForm = ({ setTask }) => {
-
-  //const [value, setValue] = useState('')
-  const [idCounter, setIdCounter] = useState(1)
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //
-  //   addTask(value)
-  //
-  //   setValue('')
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const taskText = formData.get('tasks')
 
-    if (taskText.trim() === '') return e.target.reset()
-
+    if (taskText === '') return
 
     const tasks = JSON.parse(localStorage.getItem('tasks')) || []
     const newTask = {
-      id: idCounter,
+      id: tasks.map((t) => t.id).sort((a, b) => a - b)[tasks.length - 1] + 1 || 1,
       text: taskText,
       completed: false
     }
-
-    setIdCounter(idCounter + 1)
-
-    console.log(idCounter)
 
     setTask((prev) => [...prev, newTask])
 

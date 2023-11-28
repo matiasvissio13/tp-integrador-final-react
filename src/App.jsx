@@ -20,21 +20,6 @@ function App() {
   //   }])
   // }
 
-  const taskCompleted = (id) => {
-
-    const storedTasks = JSON.parse(localStorage.getItem('tasks'))
-
-    const element = storedTasks.filter((t) => t.id === id)
-
-    if (storedTasks && storedTasks.length > 0) {
-      element.completed = true
-    }
-    console.log(element)
-
-
-    localStorage.setItem('tasks', JSON.stringify(storedTasks))
-  }
-
   useEffect(() => {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || []
     setTasks(tasks)
@@ -57,7 +42,7 @@ function App() {
               <div className="flex w-full h-full gap-7 flex-col">
                 <TaskInfo tasksLength={tasks.length} />
                 <TaskForm setTask={setTasks} />
-                <TaskList tasks={tasks} taskCompleted={taskCompleted} setTasks={setTasks} />
+                <TaskList tasks={tasks} setTasks={setTasks} />
               </div>
             }
           />

@@ -2,11 +2,23 @@ import React from 'react'
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { FaRegTrashCan } from "react-icons/fa6";
 
-const TaskItem = ({ task, setTasks, taskCompleted }) => {
+const TaskItem = ({ task, setTasks }) => {
 
   const handleDelete = () => {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || []
     const newTasks = tasks.filter((t) => t.id !== task.id)
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
+  }
+
+  const taskCompleted = () => {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || []
+    const newTasks = tasks.map((t) => {
+      if (t.id === task.id) {
+        t.completed = !t.completed
+      }
+      return t
+    })
     setTasks(newTasks)
     localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
@@ -16,8 +28,7 @@ const TaskItem = ({ task, setTasks, taskCompleted }) => {
       <div className="border-t border-gray-500"></div>
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center gap-5">
-          <button onClick={() => taskCompleted(task.id)}
-            className="text-gray-500 hover:text-green-500 transition-all duration-300">
+          <button onClick={taskCompleted} className={`text-gray-500 hover:text-green-500 transition-all duration-300 ${task.completed ? 'text-green-500' : ''}`}>
             <IoIosCheckmarkCircleOutline size={27} />
           </button>
           <p className="py-4">{task.text}</p>
@@ -27,8 +38,7 @@ const TaskItem = ({ task, setTasks, taskCompleted }) => {
           <FaRegTrashCan size={20} />
         </button>
       </div>
-    </div>
-
+    </div >
   )
 }
 
