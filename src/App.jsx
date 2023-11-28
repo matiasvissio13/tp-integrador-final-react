@@ -5,19 +5,25 @@ import TaskInfo from "./components/TaskInfo/TaskInfo";
 import TaskList from "./components/TaskList/TaskList";
 import CompletedTasks from './components/CompletedTasks/CompletedTasks';
 import { useState } from "react";
+import { useEffect } from "react";
 
 
 function App() {
 
   const [tasks, setTasks] = useState([])
 
-  const addTask = task => {
-    setTasks([...tasks, {
-      id: tasks.length,
-      task: task,
-      completed: false
-    }])
-  }
+  // const addTask = task => {
+  //   setTasks([...tasks, {
+  //     id: tasks.length,
+  //     task: task,
+  //     completed: false
+  //   }])
+  // }
+
+  useEffect(() => {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || []
+    setTasks(tasks)
+  }, [])
 
   return (
     /*{ <div className="flex w-full h-full gap-7 flex-col p-10 shadow-xl rounded text-white bg-[#393F49]">
@@ -35,8 +41,8 @@ function App() {
             element={
               <div className="flex w-full h-full gap-7 flex-col">
                 <TaskInfo />
-                <TaskForm addTask={addTask} />
-                <TaskList tasks={tasks} />
+                <TaskForm setTask={setTasks} />
+                <TaskList tasks={tasks} setTasks={setTasks} />
               </div>
             }
           />
