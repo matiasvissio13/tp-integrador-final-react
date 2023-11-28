@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 const TaskForm = ({ setTask }) => {
 
   //const [value, setValue] = useState('')
+  const [idCounter, setIdCounter] = useState(1)
 
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -16,15 +18,20 @@ const TaskForm = ({ setTask }) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const taskText = formData.get('tasks')
-    console.log(taskText)
-    if (taskText === '') return
+
+    if (taskText.trim() === '') return e.target.reset()
+
 
     const tasks = JSON.parse(localStorage.getItem('tasks')) || []
     const newTask = {
-      id: tasks.length + 1,
+      id: idCounter,
       text: taskText,
       completed: false
     }
+
+    setIdCounter(idCounter + 1)
+
+    console.log(idCounter)
 
     setTask((prev) => [...prev, newTask])
 
