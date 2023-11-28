@@ -12,7 +12,7 @@ const TaskInfo = () => {
         <div className="flex justify-between">
             <div className="flex flex-col">
                 <h3>{`${diaSemana} , ${mes} ${diaMes}`} </h3>
-                <p className="text-[#61DBFB]">3 Active Tasks</p>
+                <p className="text-[#61DBFB]">{tasksLength} Active Tasks</p>
             </div>
             <div className="flex items-start gap-10">
                 <Link to="/"><button>Incomplete Tasks</button></Link>

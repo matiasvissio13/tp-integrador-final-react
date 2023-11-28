@@ -40,7 +40,7 @@ function App() {
             path="/"
             element={
               <div className="flex w-full h-full gap-7 flex-col">
-                <TaskInfo />
+                <TaskInfo tasksLength={tasks.length}/>
                 <TaskForm setTask={setTasks} />
                 <TaskList tasks={tasks} setTasks={setTasks} />
               </div>
