@@ -2,7 +2,7 @@ import React from 'react'
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { FaRegTrashCan } from "react-icons/fa6";
 
-const TaskItem = () => {
+const TaskItem = ({task}) => {
     return (
         <div className="flex flex-col">
             <div className="border-t border-gray-500"></div>
@@ -11,7 +11,7 @@ const TaskItem = () => {
                     <button className="text-gray-500 hover:text-green-500 transition-all duration-300">
                         <IoIosCheckmarkCircleOutline size={27} />
                     </button>
-                    <p className="py-4">Client meeting @ 2:30pm</p>
+                    <p className="py-4">{task.task}</p>
                 </div>
                 <button className="text-gray-500 hover:text-red-500 transition-all duration-300">
                     <FaRegTrashCan size={20} />
