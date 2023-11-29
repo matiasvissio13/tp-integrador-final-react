@@ -28,10 +28,10 @@ const TaskItem = ({ task, setTasks }) => {
       <div className="border-t border-gray-500"></div>
       <div className="flex flex-row items-center justify-between">
         <div className="flex items-center gap-5">
-          <button onClick={taskCompleted} className={`text-gray-500 hover:text-green-500 transition-all duration-300 ${task.completed ? 'text-green-500' : ''}`}>
+          <button onClick={taskCompleted} className={`hover:text-green-500 transition-all duration-300 ${task.completed ? 'text-green-500' : 'text-gray-500'}`}>
             <IoIosCheckmarkCircleOutline size={27} />
           </button>
-          <p className="py-4">{task.text}</p>
+          <p className={`py-4 ${task.completed && 'line-through text-gray-400'}`}>{task.text}</p>
         </div>
         <button onClick={handleDelete}
           className="text-gray-500 hover:text-red-500 transition-all duration-300">

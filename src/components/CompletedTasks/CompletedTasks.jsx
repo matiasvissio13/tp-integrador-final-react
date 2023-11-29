@@ -1,13 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import TaskInfo from '../TaskInfo/TaskInfo';
-import TaskForm from '../TaskForm/TaskForm';
+import TasksListCompleted from '../TasksListCompleted/TasksListCompleted';
 
-const CompletedTasks = () => {
+const CompletedTasks = ({tasks, setTasks}) => {
   return (
     <>
-        <TaskInfo  />
-        <TaskForm  />
+    <TasksListCompleted tasks={tasks} setTasks={setTasks}/>
     </>
   );
 };
