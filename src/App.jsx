@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <div className="flex w-full h-full gap-7 flex-col p-10 shadow-xl rounded text-white bg-[#393F49]">
+      <div className="flex w-full h-full gap-7 flex-col lg:p-8 p-5 shadow-xl lg:text-base text-sm rounded text-white bg-[#393F49]">
         <div className="flex w-full h-full gap-7 flex-col">
           <TaskInfo tasks={tasks} />
           <TaskForm setTask={setTasks} />

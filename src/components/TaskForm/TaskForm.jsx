@@ -22,9 +22,9 @@ const TaskForm = ({ setTask }) => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-row gap-2">
       <input
-        className="py-[6px] px-2 rounded w-[350px] text-black"
+        className="py-[6px] px-2 rounded w-full lg:w-[350px] text-black"
         type="search" name="tasks" id="" placeholder="Enter a task..." />
-      <button type='submit' className="bg-[#61DBFB] hover:bg-[#61dcfbe0] transition-all duration-300 px-4 rounded">Add Task</button>
+      <button type='submit' className="w-[120px] bg-[#61DBFB] hover:bg-[#61dcfbe0] transition-all duration-300 px-4 rounded">Add Task</button>
     </form>
   )
 }

@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   width: 100%;
   background: #61DBFB;
@@ -18,4 +19,16 @@ html, body {
   width: 80%;
   max-width: 960px;
   height: 70%;
+}
+
+@media screen and (max-width: 1024px) {
+  #root {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #root {
+    height: 90%;
+  }
 }
