@@ -1,8 +1,21 @@
-# React + Vite
+# Task List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicacion web de lista de tareas que te permite organizar y administrar tus tareas diarias de manera eficiente.
 
-Currently, two official plugins are available:
+## Caracteristicas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Añadir tareas: Puedes agregar nuevas tareas especificando su nombre.
+- Marcar como completadas: Puedes marcar las tareas ya realizadas para tener un seguimiento de lo que hiciste o no.
+- Eliminar tareas: Elimina las tareas que ya no son necesarias.
+- Puedes ver las listas de las tareas realizadas y no realizadas.
+
+## Instalacion
+
+- Puedes clonar este projecto con el siguiente comando: 'git clone https://github.com/tu-usuario/task-list.git'
+
+## Tecnologias utilizadas:
+
+- React
+- CSS
+- Tailwind CSS
+- Vite
